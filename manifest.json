@@ -1,0 +1,28 @@
+{
+  "name": "Широкий плеер Skillbox",
+  "description": "Расширяет плеер Sillbox-а на весь экран",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.skillbox.ru/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.skillbox.ru/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
